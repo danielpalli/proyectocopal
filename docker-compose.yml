@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  maria-db:
+    image: mariadb:latest
+    container_name: maria-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: copaldb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: squad01
+    volumes:
+      - data:/var/lib/mysql
+    ports:
+      - "3306:3306"
