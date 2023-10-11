@@ -6,6 +6,7 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: squad01
+      MYSQL_ROOT_HOST: 172.18.0.1
     command: --init-file /data/app/init.sql
     volumes:
       - ./data:/var/lib/mariadb
