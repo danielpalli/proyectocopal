@@ -1,30 +1,16 @@
-  # services:
-  #   maria-db:
-  #     image: mariadb:latest
-  #     container_name: maria-db
-  #     restart: always
-  #     environment:
-  #       MYSQL_ROOT_PASSWORD: admin
-  #       MYSQL_DATABASE: copaldb
-  #       MYSQL_USER: root
-  #       MYSQL_PASSWORD: squad01
-  #     volumes:
-  #       - data:/var/lib/mysql
-  #     ports:
-  #       - "3306:3306"
-# Use root/example as user/password credentials
-version: '3.1'
+version: '3.8'
 
 services:
-
   db:
     image: mariadb
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: example
+      MARIADB_ROOT_PASSWORD: squad01
+    volumes:
+      - ./data:/var/lib/mariadb
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
+      - 8181:8080
