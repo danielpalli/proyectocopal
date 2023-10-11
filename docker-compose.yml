@@ -6,8 +6,13 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: squad01
+    command: --init-file /data/app/init.sql
     volumes:
       - ./data:/var/lib/mariadb
+      - ./init.sql:/data/app/init.sql
+
+    ports:
+      - 3306:3306
 
   adminer:
     image: adminer
